@@ -1,4 +1,4 @@
-import { createServerFn } from "@tanstack/react-start";
+
 import { z } from "zod";
 import phinSuaDa from "@/assets/products/phin-sua-da.png";
 import phinDenDa from "@/assets/products/phin-den-da.png";
@@ -8,7 +8,7 @@ import freezematcha from "@/assets/products/freeze-matcha.jpg";
 import freezechoc from "@/assets/products/freeze-chocolate.jpg";
 
 
-export const listProducts = createServerFn({ method: "GET" }).handler(async () => {
+export async function listProducts() {
   return [
     {
       id: "phin-sua-da",
@@ -80,7 +80,7 @@ export const listProducts = createServerFn({ method: "GET" }).handler(async () =
       is_available: true,
     },
   ];
-});
+}
 
 
 const productInput = z.object({
